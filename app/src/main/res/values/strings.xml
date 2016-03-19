@@ -2,4 +2,5 @@
     <string name="app_name">Disperz</string>
     <string name="action_settings">settings</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_checkpoints_maps">Map</string>
 </resources>
