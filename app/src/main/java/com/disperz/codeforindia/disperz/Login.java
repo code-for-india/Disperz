@@ -2,8 +2,8 @@ package com.disperz.codeforindia.disperz;
 
 import android.content.Intent;
 import android.content.IntentSender;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,14 +24,11 @@ public class Login extends AppCompatActivity implements
 
     /* Request code used to invoke sign in user interactions. */
     private static final int RC_SIGN_IN = 0;
-
+    private static final String TAG = "SignIn Log";
     /* Client used to interact with Google APIs. */
     private GoogleApiClient mGoogleApiClient;
-
     private boolean mIsResolving = false;
     private boolean mShouldResolve = false;
-
-    private static final String TAG = "SignIn Log";
     private String email;
 
     @Override
@@ -108,7 +105,7 @@ public class Login extends AppCompatActivity implements
         Log.d("email", email);
 
         // Open the SelectMonumentActivity
-        Intent intent = new Intent(Login.this, MonumentSelector.class);
+        Intent intent = new Intent(Login.this, MapsActivity.class);
         intent.putExtra("email", email);
         startActivity(intent);
 
