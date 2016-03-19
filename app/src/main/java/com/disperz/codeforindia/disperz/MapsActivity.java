@@ -40,7 +40,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng chLocation = new LatLng(28, 77);
+        LatLng chLocation = new LatLng(28.631713, 77.217109);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(chLocation, 9));
 
         // Add a marker in Sydney and move the camera
@@ -52,9 +52,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         LatLng redfort = new LatLng(28.6560, 77.2410);
         mMap.addMarker(new MarkerOptions().position(redfort).title("Red Fort"));
+/*
 
         LatLng lotus = new LatLng(28.5533, 77.2586);
         mMap.addMarker(new MarkerOptions().position(lotus).title("Lotus Temple"));
+*/
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 

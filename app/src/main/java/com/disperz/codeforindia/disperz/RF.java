@@ -11,19 +11,15 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.parse.ParseUser;
 
-public class CheckpointsMapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class RF extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_checkpoints_maps);
-
-        ParseUser.enableAutomaticUser();
-
+        setContentView(R.layout.activity_lt);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -44,49 +40,44 @@ public class CheckpointsMapsActivity extends FragmentActivity implements OnMapRe
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        Intent intent = getIntent();
-        String place = intent.getStringExtra("PLACE");
-
-        setTitle(place);
-
-        LatLng chLocation = new LatLng(28.6143, 77.1998);
+        LatLng chLocation = new LatLng(28.655816, 77.241009);
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(chLocation, 17));
 
-        LatLng check1 = new LatLng(28.614456, 77.197835);
-        mMap.addMarker(new MarkerOptions().position(check1).title("Mughal Garden"));
+        LatLng check1 = new LatLng(28.655816, 77.241009);
+        mMap.addMarker(new MarkerOptions().position(check1).title("Naqquar Khaana"));
 
-        LatLng rash = new LatLng(28.614219, 77.200345);
-        mMap.addMarker(new MarkerOptions().position(rash).title("Rashtrapati Bhavan Museum")).showInfoWindow();
+        LatLng rash = new LatLng(28.655670, 77.242270);
+        mMap.addMarker(new MarkerOptions().position(rash).title("Diwan-i-Aam")).showInfoWindow();
 
-        LatLng akshar = new LatLng(28.614342, 77.201957);
-        mMap.addMarker(new MarkerOptions().position(akshar).title("Jaipur Column"));
+        LatLng akshar = new LatLng(28.655744, 77.243542);
+        mMap.addMarker(new MarkerOptions().position(akshar).title("Rang Mahal"));
 
-        LatLng redfort = new LatLng(28.614487, 77.199413);
-        mMap.addMarker(new MarkerOptions().position(redfort).title("Cultural Hall"));
+        LatLng redfort = new LatLng(28.656407, 77.243586);
+        mMap.addMarker(new MarkerOptions().position(redfort).title("Diwan-i-Khas"));
 
         mMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 
             @Override
             public boolean onMarkerClick(Marker arg0) {
 
-                Intent intent = new Intent(CheckpointsMapsActivity.this, GetTicket.class);
+                Intent intent = new Intent(RF.this, GetTicket.class);
                 intent.putExtra("PLACE", arg0.getTitle());
 
-                if (arg0.getTitle().equals("Mughal Garden")) // if marker source is clicked
+                if (arg0.getTitle().equals("Naqquar Khaana")) // if marker source is clicked
                 {
                     intent.putExtra("GATE", "Gate 1");
                 }
-                if (arg0.getTitle().equals("Rashtrapati Bhavan Museum")) // if marker source is clicked
+                if (arg0.getTitle().equals("Diwan-i-Aam")) // if marker source is clicked
                 {
                     intent.putExtra("GATE", "Gate 2");
                 }
 
-                if (arg0.getTitle().equals("Jaipur Column")) // if marker source is clicked
+                if (arg0.getTitle().equals("Rang Mahal")) // if marker source is clicked
                 {
                     intent.putExtra("GATE", "Gate 3");
                 }
 
-                if (arg0.getTitle().equals("Cultural Hall")) // if marker source is clicked
+                if (arg0.getTitle().equals("Diwan-i-Khas")) // if marker source is clicked
                 {
                     intent.putExtra("GATE", "Gate 4");
                 }
@@ -96,5 +87,4 @@ public class CheckpointsMapsActivity extends FragmentActivity implements OnMapRe
             }
         });
     }
-
 }

@@ -3,4 +3,6 @@
     <string name="action_settings">settings</string>
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_checkpoints_maps">Map</string>
+    <string name="title_activity_lt">Map</string>
+    <string name="title_activity_ak">Map</string>
 </resources>

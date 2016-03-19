@@ -28,11 +28,27 @@ public class GetTicket extends AppCompatActivity {
             public void run() {
                 //Do something after 100ms
 
-                Intent intent_1 = new Intent(GetTicket.this, CheckpointsMapsActivity.class);
-                intent_1.putExtra("PLACE", name);
-                startActivity(intent_1);
+                if (name.equals("Red Fort")) // if marker source is clicked
+                {
+                    Intent intent = new Intent(GetTicket.this, RF.class);
+                    intent.putExtra("PLACE", name);
+                    intent.putExtra("GATE", "Entry");
+                    startActivity(intent);
+                }
+                if (name.equals("Akshardham")) // if marker source is clicked
+                {
+                    Intent intent = new Intent(GetTicket.this, AK.class);
+                    intent.putExtra("PLACE", name);
+                    intent.putExtra("GATE", "Entry");
+                    startActivity(intent);
+                }
+                if (name.equals("Rashtrapati Bhavan")) {
+                    Intent intent = new Intent(GetTicket.this, CheckpointsMapsActivity.class);
+                    intent.putExtra("PLACE", name);
+                    startActivity(intent);
+                }
             }
-        }, 6000);
+        }, 10000);
 
         setContentView(view);
     }

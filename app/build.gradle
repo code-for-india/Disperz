@@ -14,6 +14,7 @@ android {
     buildTypes {
         release {
             minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -28,4 +29,5 @@ dependencies {
     compile 'com.google.android.gms:play-services-plus:8.4.0'
     compile 'com.google.android.gms:play-services-maps:8.4.0'
     compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.parse.bolts:bolts-android:1.+'
 }
