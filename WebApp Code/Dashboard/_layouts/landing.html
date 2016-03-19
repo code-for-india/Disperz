@@ -1,0 +1,66 @@
+{% include header-landing.html %}
+<div class="row">
+  <div class="icon-bg">
+  </div>
+  <div class="small-6 columns text-right b-ws-top icon-bg-fx">
+    <h3 class="hero-heading m-ws-top">
+      <div><span class="bgbg wc">Smoother Public Monument Visits</span></div>
+      <div><span class="bbg wc"> using Dispersive Planning</span></div>
+      <div><span class="dbbg wc">Surveillance Platform</span></div>
+    </h3>
+  </div>
+  <div class="small-3 columns icon-bg-fx">
+    <img src="assets/images/placeholder.png">
+  </div>
+  <div class="small-3 columns icon-bg-fx">
+    <a href="https://play.google.com/store/apps/details?id=com.meriawaaz.mygap" target="_blank"><img src="assets/images/playstore.png" style="margin-top:12em;"></a>
+    <p class="s-ws-top">Checkout our Demo <br>Visit <a href="{{site.url}}/places.html" class="button tiny secondary">Dashboard</a></p>
+  </div>
+</div>
+<div class="panel p-fx-btm icon-bg-fx">
+  <div class="row home-showcase">
+    <div class="small-4 columns text-center" data-orbit-link="slide-1">            
+      <img src="{{site.url}}/assets/images/policy.png">
+      <h4 class="s-ws-top">Seemless Check-In into Public Monuments</h4>
+      <p class="secondary-color">Directly Check-In for a Visit to a Public Monument. Get Crowd Analytics. </p>
+    </div>
+    <div class="small-4 columns text-center" data-orbit-link="slide-2">
+      <img src="{{site.url}}/assets/images/report-issues.png">
+      <h4 class="s-ws-top">Intelligent Dispersive Planning</h4>
+      <p class="secondary-color">Get the shortest Queue. Obtain intelligently constructed route through the area.</p>
+    </div>
+    <div class="small-4 columns text-center" data-orbit-link="slide-3">
+      <img src="{{site.url}}/assets/images/public-spend.png">
+      <h4 class="s-ws-top">Experience Gamification</h4>
+      <p class="secondary-color">Cover maximum campus area and fuel our analytics at the same time!</p>
+    </div>
+  </div>
+</div>
+ <!-- <div class="row text-center">
+        <h2>How it works</h2>
+        <img src="assets/images/how-it-works.png">
+      </div> -->
+   </div>
+
+   {% include footer.html %}
+   <script type="text/javascript" src="{{site.url}}/assets/bower_components/foundation/js/foundation/foundation.orbit.js"></script>
+   <script type="text/javascript">
+     $( document ).ready(function() {
+      icon_bg();
+      icon_bg();
+    });
+     $(document).foundation({
+      orbit: {
+        animation: 'slide',
+        timer_speed: 2500,
+        pause_on_hover: true,
+        animation_speed: 1000,
+        navigation_arrows: false,
+        bullets: false,
+        slide_number: false,
+        timer: false,
+        next_on_click: false,
+      }
+    });
+   </script>
+   </html>

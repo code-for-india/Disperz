@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Disperz</title>
+  {% include header.html %}
+  
+  <div class="row control-bar b-ws-top">
+    <div class="small-2 columns fx2" >
+      <div id="back" style="display:none;">
+        <i class="icon-left"></i><a  class="f-1-5x">Back</a>
+      </div>
+      
+    </div>
+
+  </div>
+    <div class="row">
+      <div class="small-1 columns panel text-center">
+        <h4>Status</h4>
+        <div class="bbm">
+          <label for="open_it"><div id="fn1" class="f-2x yc">0</div>En Route</label><input type="checkbox" id="route_it" checked='true'>
+        </div>
+        <div class="bbm">
+          <label for="prog_it"><div id="fn2" class="f-2x bgc">0</div>In Progress</label><input type="checkbox" id="prog_it" checked='true'>
+        </div>
+        <div class="bbm">
+          <label for="review_it"><div id="fn3" class="f-2x bc">0</div>Completed</label><input type="checkbox" id="completed_it" checked='true'>
+        </div>
+      </div>
+      <div class="small-8 columns">
+        <div id="map-view" class="panel p-fx">
+          <div id="map" class="google-map" style="width:100%">  </div> 
+        </div>
+      </div>
+      <div id="details-column" class="small-3 columns panel">
+        <h4>Overview</h4>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+      </div>
+    {% include footer.html %} 
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script type="text/javascript" src="{{site.url}}/assets/bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+
+
+    <script type="text/javascript">
+      $(document).foundation();
+    </script>
+
+    <script type="text/javascript" src="{{site.url}}/assets/js/countUp.min.js"></script>
+    <script type="text/javascript" src="{{site.url}}/assets/js/moment.min.js"></script>
+    <script type="text/javascript" src="{{site.url}}/assets/js/daterangepicker.js"></script>
+    <script type="text/javascript" src="{{site.url}}/assets/js/dashboard.js"></script>
+    <script type="text/javascript" src="{{site.url}}/assets/js/jquery.canvasjs.min.js"></script>
+    <script>
+      $( document ).ready(function() {
+        initialize();
+        //Set the initial state of the picker label
+        //Better to construct options first and then pass it as a parameter
+        var options = {
+          title: {
+            text: "Crowd Density at CheckPoints"
+          },
+                      animationEnabled: true,
+          data: [
+          {
+            type: "column", //change it to line, area, bar, pie, etc
+            dataPoints: [
+              { x: 1, y: 25 },
+              { x: 2, y: 35 },
+              { x: 3, y: 35 },
+              { x: 4, y: 5 }
+            ]
+          }
+          ]
+        };
+
+        $("#chartContainer").CanvasJSChart(options);
+    });
+    </script>
+    </html>
